@@ -28,4 +28,6 @@
 ### using links to add search params
 ### new URLSearchParams
 
+### passing state with Link
 
+### receiving the passed state using useLocation hook

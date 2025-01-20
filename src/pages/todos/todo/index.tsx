@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router";
-import { ITodoItem } from "..";
+import { useLocation, useParams, useSearchParams } from "react-router";
+import { ITodoItem } from "../index";
 
 const Todo = () => {
   const { id } = useParams<{ id: string }>();
@@ -8,6 +8,9 @@ const Todo = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [searchParams, setSearcgParams] = useSearchParams();
+
+  const location = useLocation();
+  console.log("current location is ", location);
 
   const searchType = searchParams.get("type");
 

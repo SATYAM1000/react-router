@@ -4,7 +4,11 @@ import { MenuItems } from "../../constants";
 const Navbar = () => {
   return (
     <nav className="w-full h-16 flex items-center justify-between px-20 max-w-screen-2xl border-b border-gray-200">
-      <Link to={"/"} className="font-bold text-gray-900 text-xl">
+      <Link
+        state={{ from: "/" }}
+        to={"/"}
+        className="font-bold text-gray-900 text-xl"
+      >
         Navbar
       </Link>
       <div className="flex items-center gap-4">
@@ -21,7 +25,9 @@ const Navbar = () => {
             {item.name}
           </NavLink>
         ))}
-        <Link relative="path" to={"."}>Back</Link>
+        <Link relative="path" to={"."}>
+          Back
+        </Link>
       </div>
     </nav>
   );
