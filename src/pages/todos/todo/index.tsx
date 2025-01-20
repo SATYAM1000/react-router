@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useSearchParams } from "react-router";
 import { ITodoItem } from "..";
 
 const Todo = () => {
@@ -7,6 +7,18 @@ const Todo = () => {
   const [todo, setTodo] = useState<ITodoItem | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [searchParams, setSearcgParams] = useSearchParams();
+
+  const searchType = searchParams.get("type");
+
+  useEffect(() => {
+    const todoId = searchParams.get("id");
+    if (!todoId) {
+      setSearcgParams({
+        id: "123",
+      });
+    }
+  }, [searchParams, setSearcgParams]);
 
   const fetchTodo = useCallback(async () => {
     if (!id) {

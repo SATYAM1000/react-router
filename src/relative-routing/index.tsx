@@ -2,12 +2,19 @@ import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 const MainLayout = lazy(() => import("../layout"));
+
 const Home = lazy(() => import("../pages/home/index"));
+
 const About = lazy(() => import("../pages/about/index"));
+
 const Contact = lazy(() => import("../pages/contact/index"));
+
 const Todos = lazy(() => import("../pages/todos"));
+
 const Todo = lazy(() => import("../pages/todos/todo/index"));
+
 const TodosLayout = lazy(() => import("../pages/todos/layout/index"));
+
 const RelativeRouting = () => {
   return (
     <BrowserRouter>
