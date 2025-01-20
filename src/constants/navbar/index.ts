@@ -30,4 +30,9 @@ export const NavbarMenuItems: IMenuItem[] = [
     name: "Todo",
     path: "/todos/1",
   },
+  {
+    id: 6,
+    name: "Items",
+    path: "/items",
+  },
 ];

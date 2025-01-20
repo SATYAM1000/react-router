@@ -11,6 +11,8 @@ const Todo = () => {
 
   const location = useLocation();
   console.log("current location is ", location);
+  const state=location.state.from;
+  console.log("current state is ", state)
 
   const searchType = searchParams.get("type");
 

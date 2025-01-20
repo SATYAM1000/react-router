@@ -27,6 +27,11 @@ const RelativeRouting = () => {
             <Route index element={<Todos />} />
             <Route path=":id" element={<Todo />} />
           </Route>
+
+          <Route
+            path="*"
+            element={<h1 className="text-red-600 text-xl font-bold">404 Page not found</h1>}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
